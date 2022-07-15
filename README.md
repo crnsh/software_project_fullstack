@@ -4,6 +4,8 @@
     - This returns an array of `created_at` for all tweets which have `keyword` as an entity.
 2. `/tweets/vis-2/:hashtag`
     - This returns an array of `created_at` for all tweets which have `hashtag` as a hashtag.
+3. `/tweets/mining` [WIP]
+    - This returns some mined JSON data. More configurations need to be added to make it configurable.
 ### Example
 1. `/tweets/vis-1/Russia` returns the following
 ```
