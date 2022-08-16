@@ -42,4 +42,20 @@ div.arr {
     justify-content: end;
     align-items: end;
     padding-right: 15px;
+    padding-bottom: 50px;
+}
+
+.col-btn {
+    width: 50%;
+}
+
+.col-btn1 {
+    display: block;
+    width: 100%;
+    border-radius: 100px;
+    padding-bottom: 10px;
+}
+
+.row-btn {
+    padding: 20px;
 }

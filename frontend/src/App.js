@@ -5,6 +5,7 @@ import {Container} from 'react-bootstrap'
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import Home from './pages/Home';
+import Choice from './pages/Choice';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/define' element={<Choice />} />
       </Routes>
       </BrowserRouter>
     </Container>
