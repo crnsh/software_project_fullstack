@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, Form, Button } from 'react-bootstrap'
+import UseApi from '../Components/UseApi'
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       </Form>
     <div className = "arr"><Button className = "arrbtn bi-arrow-right">
       </Button></div>
+    <UseApi />
     </Container>
     </div>
   )
