@@ -19,7 +19,13 @@ router.get('/vis-1/:keyword', function(req, res, next) {
   const database = client.db('mined_data');
   const tweets = database.collection('sample_ukr_json');
 
-  const query = {'entities.annotations' : {$elemMatch : {normalized_text : keyword}}};
+  const query = {
+    'entities.annotations' : {
+      $elemMatch : {
+        normalized_text : keyword
+      }
+    }
+  }
 
   const options = {
     sort : {created_at : 1},
@@ -29,7 +35,31 @@ router.get('/vis-1/:keyword', function(req, res, next) {
   const tweetArray = [];
 
   const cursor = tweets
-    .find(query, options)
+    .aggregate([
+      { 
+        $match : query
+      },
+      { 
+        $group : {
+          _id: {
+              $dateToString: {
+                date: {$toDate:"$created_at"},
+                format: "%Y-%m-%d",
+              }
+          },
+          count: {
+            $sum: 1
+          }
+        }
+      },
+      {
+        $project: {
+          date : "$_id",
+          _id : 0,
+          count: 1
+        }
+      }
+    ])
     .forEach(tweet => tweetArray.push(tweet))
     .then(() => {
       res.status(200).json(tweetArray)
@@ -45,7 +75,13 @@ router.get('/vis-2/:hashtag', function (req, res, next) {
   const database = client.db('mined_data');
   const tweets = database.collection('sample_ukr_json');
 
-  const query = {'entities.hashtags' : {$elemMatch : {tag : hashtag}}};
+  const query = {
+    'entities.hashtags' : {
+      $elemMatch : {
+        tag : hashtag
+      }
+    }
+  };
 
   const options = {
     sort : {created_at : 1},
@@ -55,7 +91,31 @@ router.get('/vis-2/:hashtag', function (req, res, next) {
   const tweetArray = [];
 
   const cursor = tweets
-    .find(query, options)
+  .aggregate([
+    { 
+      $match : query
+    },
+    { 
+      $group : {
+        _id: {
+            $dateToString: {
+              date: {$toDate:"$created_at"},
+              format: "%Y-%m-%d",
+            }
+        },
+        count: {
+          $sum: 1
+        }
+      }
+    },
+    {
+      $project: {
+        date : "$_id",
+        _id : 0,
+        count: 1
+      }
+    }
+  ])
     .forEach(tweet => tweetArray.push(tweet))
     .then(() => {
       res.status(200).json(tweetArray)
