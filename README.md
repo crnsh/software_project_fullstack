@@ -1,4 +1,18 @@
 # CANDID Software Project Backend
+### Setup
+**You must have NPM version 8+ and NodeJS version 18+ installed**
+```
+$ git clone https://github.com/karan0handa/software_project_fullstack
+$ cd backend/
+$ npm install 
+$ npm start
+```
+Open another terminal at `/software_project_fullstack`
+```
+$ cd frontend/
+$ npm install
+$ npm start
+```
 ### Routes
 1. `/tweets/vis-1/:keyword`
     - This returns an array of documents with `date` and `count` where `count` is the number of tweets which have `keyword` as an entity and `date` is the date those tweets were `created_at`. Basically the tweets are grouped by date.
