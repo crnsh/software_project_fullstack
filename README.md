@@ -1,4 +1,4 @@
-# CANDID Software Project Backend
+# CANDID Software Project Fullstack
 ### Setup
 **You must have NPM version 8+ and NodeJS version 18+ installed**
 ```
