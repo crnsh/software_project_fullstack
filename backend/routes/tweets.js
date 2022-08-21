@@ -119,6 +119,11 @@ router.get('/vis-2/:hashtag', function (req, res, next) {
         _id : 0,
         count: 1
       }
+    },
+    {
+      $sort: {
+        date : 1
+      }
     }
   ])
     .forEach(tweet => tweetArray.push(tweet))
