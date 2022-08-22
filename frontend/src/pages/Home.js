@@ -1,21 +1,24 @@
 import React from 'react'
 import { Container, Form, Button } from 'react-bootstrap'
-import UseApi from '../Components/UseApi'
+import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
+
+  let navigate = useNavigate();
+
   return (
     <div className = "fluidbg">
     <Container className = "whitebg">
     <Form className = "bearer">
       <Form.Group style = {{padding:"10px"}}controlId="formBasicPassword">
-      <h5 style={{textAlign:"left", paddingLeft:"10px"}}>bearer token.</h5>
+        <h5 style={{textAlign:"left", paddingLeft:"10px"}}>bearer token.</h5>
         <Form.Control style = {{borderRadius:"100px", fontSize: "16px", height:"50px"}} type="password" placeholder="Enter token" />
         <Form.Text className="text-muted" style = {{textAlign:"right", paddingTop:"10px"}}>Make sure the token you use has access to the academic API.</Form.Text>
       </Form.Group> 
-      </Form>
-    <div className = "arr"><Button className = "arrbtn bi-arrow-right">
-      </Button></div>
-    <UseApi />
+    </Form>
+    <div className = "arr">
+      <Button onClick={()=>navigate("/define")} className = "arrbtn bi-arrow-right"></Button>
+    </div>
     </Container>
     </div>
   )

@@ -6,6 +6,7 @@ import Header from './Components/Header';
 import Footer from './Components/Footer';
 import Home from './pages/Home';
 import Choice from './pages/Choice';
+import GraphPage from './pages/GraphPage';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/define' element={<Choice />} />
+        <Route path='/graph' element={<GraphPage />} />
       </Routes>
       </BrowserRouter>
     </Container>
