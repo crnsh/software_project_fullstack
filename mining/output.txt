@@ -1,0 +1,27 @@
+{
+    "data": {
+        "author_id": "1436577653125877768",
+        "conversation_id": "1558395633538457600",
+        "created_at": "2022-08-13T10:10:47.000Z",
+        "geo": {
+            "place_id": "004ec16c62325149"
+        },
+        "id": "1558395633538457600",
+        "lang": "en",
+        "public_metrics": {
+            "retweet_count": 0,
+            "reply_count": 0,
+            "like_count": 0,
+            "quote_count": 0
+        },
+        "reply_settings": "everyone",
+        "source": "Twitter for iPhone",
+        "text": "Let\u2019s go @brisbanebroncos! \n\n#Broncos #NRL #NRL360 #Suncorp #Footy #NFT https://t.co/3AovFUA2Rn"
+    },
+    "matching_rules": [
+        {
+            "id": "1558395487111168000",
+            "tag": "nft"
+        }
+    ]
+}
