@@ -33,3 +33,6 @@ $ npm start
     {"count":161,"date":"2022-03-02"},{"count":1,"date":"2022-02-27"},{"count":2,"date":"2022-02-26"},{"count":2,"date":"2022-02-25"},{"count":1,"date":"2022-02-24"},{"count":6,"date":"2022-02-28"},{"count":8,"date":"2022-03-01"}
 ]
 ```
+### Mining scripts
+1. The script `past_mining.py` mines tweets following a timeperiod and a search operator (currently NFT)
+2. The script `stream_mining.py` mines the current stream of tweets. It searches for tweets matching operators in real-time.
